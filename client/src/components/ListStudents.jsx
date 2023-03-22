@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
+import MyForm from './Form';
 
 const ListStudents = () => {
 
@@ -17,8 +18,13 @@ const ListStudents = () => {
 
     useEffect(() => {
         loadStudents();
-      }, []);
-    
+    }, []);
+
+    const onSaveStudent = (newStudent) => {
+        //console.log(newStudent, "From the parent - List of Students");
+        setStudents((students) => [...students, newStudent]);
+    }
+
 
 
     return (
@@ -26,9 +32,12 @@ const ListStudents = () => {
             <h2>Techtonica Participants </h2>
             <ul>
                 {students.map((student) => {
-                    return <li key={student.studentid}> <a student={student}> {student.firstname} {student.lastname} </a> <ioicons.IoTrashBin style={{ marginInlineStart: '5px', color: "red" }} /></li>
+                    return <li key={student.id}> <a student={student}> {student.firstname} {student.lastname} </a> <ioicons.IoTrashBin style={{ marginInlineStart: '5px', color: "red" }} /></li>
                 })}
             </ul>
+            <div>
+                <MyForm onSaveStudent={onSaveStudent} />
+            </div>
         </div>
     );
 }
