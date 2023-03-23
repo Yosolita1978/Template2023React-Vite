@@ -25,6 +25,19 @@ const ListStudents = () => {
         setStudents((students) => [...students, newStudent]);
     }
 
+    //A function to handle the Delete funtionality
+    const onDelete = (student) => {
+        console.log(student, "delete method")
+        return fetch(`http://localhost:8080/api/students/${student.id}`, {
+            method: "DELETE"
+        }).then((response) => {
+            //console.log(response);
+            if (response.ok) {
+                loadStudents();
+            }
+        })
+    }
+
 
 
     return (
@@ -32,7 +45,7 @@ const ListStudents = () => {
             <h2>Techtonica Participants </h2>
             <ul>
                 {students.map((student) => {
-                    return <li key={student.id}> <a student={student}> {student.firstname} {student.lastname} </a> <ioicons.IoTrashBin style={{ marginInlineStart: '5px', color: "red" }} /></li>
+                    return <li key={student.id}> <a student={student}> {student.firstname} {student.lastname} </a> <ioicons.IoTrash className={'myicon'} onClick={()=>{onDelete(student)}} /></li>
                 })}
             </ul>
             <div>

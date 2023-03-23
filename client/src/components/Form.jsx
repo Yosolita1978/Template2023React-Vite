@@ -39,7 +39,10 @@ const MyForm = (props) => {
             })
             .then((data) => {
                 //console.log("From the post ", data);
+                //I'm sending data to the List of Students (the parent) for updating the list
                 props.onSaveStudent(data);
+                //this line just for cleaning the form
+                setStudent({ firstname: "", lastname: "", iscurrent: false })
             });
     };
 
@@ -75,7 +78,7 @@ const MyForm = (props) => {
             <Form.Check 
             type={'checkbox'}
             id={`isCurrent`}
-            checked={student.isCurrent}
+            checked={student.iscurrent}
             onChange={handleCheckChange}
             label={`Are they in the current program?`}
           />

@@ -47,6 +47,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: left;
 }
 
 input[type=text] {
@@ -60,4 +61,19 @@ input[type=text] {
 
 button.btn.btn-primary {
   margin-top: 25px;
+}
+
+.myicon {
+  stroke: rgb(243, 121, 7);
+  color: rgb(243, 121, 7);
+  stroke-width: 10;
+}
+
+.form-label {
+  margin-bottom: 0 !important;
+  margin-top: 0.5em;
+}
+
+.form-check{
+  margin-top: 1em;
 }
