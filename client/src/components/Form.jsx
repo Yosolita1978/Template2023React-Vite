@@ -4,19 +4,11 @@ import { Button, Form } from "react-bootstrap"
 const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
 
     // This is the original State with not initial student 
-    const [student, setStudent] = useState({
+    const [student, setStudent] = useState(editingStudent || {
         firstname: "",
         lastname: "",
         is_current: false
     });
-
-    useEffect(() => {
-        setStudent(editingStudent || {
-            firstname: "",
-            lastname: "",
-            is_current: false
-        });
-    }, [editingStudent]);
 
     //create functions that handle the event of the user typing into the form
     const handleNameChange = (event) => {

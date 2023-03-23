@@ -69,7 +69,7 @@ const ListStudents = () => {
                 })}
             </ul>
         </div>
-        <MyForm onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} />
+        <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} />
         </div>
     );
 }
