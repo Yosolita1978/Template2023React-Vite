@@ -4,7 +4,7 @@ body {
 }
 
 a.navbar-brand {
-  margin-inline-start: -225px;
+  margin-inline-start: -5em;
 }
 
 .nav-link {
@@ -33,16 +33,6 @@ li:visited {
   color: black;
 }
 
-li:hover {
-  background-color: rgb(238, 232, 232);
-  color: black;
-}
-
-li:active {
-  background-color: rgb(238, 232, 232);
-  color: black;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -67,6 +57,7 @@ button.btn.btn-primary {
   stroke: rgb(243, 121, 7);
   color: rgb(243, 121, 7);
   stroke-width: 10;
+  margin-right: 0.9em;
 }
 
 .form-label {

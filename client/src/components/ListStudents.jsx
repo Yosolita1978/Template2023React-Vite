@@ -45,7 +45,9 @@ const ListStudents = () => {
             <h2>Techtonica Participants </h2>
             <ul>
                 {students.map((student) => {
-                    return <li key={student.id}> <a student={student}> {student.firstname} {student.lastname} </a> <ioicons.IoTrash className={'myicon'} onClick={()=>{onDelete(student)}} /></li>
+                    return <li key={student.id}> <a student={student}> {student.firstname} {student.lastname} 
+                    </a> <ioicons.IoTrash className={'myicon'} onClick={()=>{onDelete(student)}} />
+                    <ioicons.IoSync className={'myicon'} /></li>
                 })}
             </ul>
             <div>
