@@ -1,18 +1,17 @@
 # Your First Express and React App with Vite
- ⚡ Create full stack apps with React and Express. Run your client using Vite, server using Express and do a restart of your dump db to have a full-stack project working in minutes ⚡
+ ⚡ Create a working full stack app with React and Express in minutes by running your client using Vite, your server using Express, and dumping your db in the template ⚡
 
 ## Step by Step instructions - To use this project as your start point  🚀  
-### For create the whole project
+### To create the whole project
 
 
 1. Go to your source directory in your terminal and run the command `git clone https://github.com/Yosolita1978/Template2023React-Vite.git NAMENEWDIRECTORY`
 
-![You will something like this in your terminal](https://github.com/Yosolita1978/screenshoots/blob/main/template/Screen%20Shot%202022-03-20%20at%207.50.46%20PM.png?raw=true)
+2. To clean the owner git out of the main directory, run the command `rm -rf .git`
 
+3. Then while still within the main directory in your terminal, run the command `git init` to start your own git track 
 
-2. To clean your folder from the owner git, run the command `rm -rf .git`
-
-3. Run the command `git init` to start your git track inside your directory
+![You will something like this in your terminal](https://user-images.githubusercontent.com/102179075/227304861-7ad633d7-5ec0-463a-8554-9e8b4c8caaad.png?raw=true)
 
 4. Go to the server folder in the project (`cd server`) and run the command `npm install`
 
@@ -20,15 +19,15 @@
 
 ⚠️ All these instructions should be inside your server folder ⚠️
 
-6. To restore the DB dump file that the project already contain, there are two ways of working. 
+6. There are two ways to restore the DB dump file the project already contains: 
 
-A- If you set up your postgres with an User:  
- * just run the command `psql -U postgres -f db.sql`. Make sure that you have your Postgres password on hand. The psql console will ask you for your password. 
+A- If you have postgres set up postgres with an User:  
+ * just run the command `psql -U postgres -f db.sql`. Make sure that you have your Postgres password on hand. The psql console will ask for your password. 
 
-B- If your initial configuration of postgres doesn't required a User:
+B- If your initial configuration of postgres doesn't require a User:
 * just run the command `psql -f db.sql`
 
-7. Inside your server folder, open the file `.env.example` and copy the right line for you there. 
+7. Inside your server folder, open the file `.env.example` and copy the correct option for your configuation found there to your new .env file. 
 
 Here is what your `.env` might look like:
 
@@ -37,7 +36,7 @@ DB_URI="postgresql://localhost/techtonica"
 ``` 
 For this template, the name of your db should be `techtonica`.
 
-⚠️ If you don't see a `techtonica` db, you can create one. Go to another terminal, go to the psql command line with `psql` and type `create database techtonica;` - don't forget the semicolon!! ⚠️
+⚠️ If you don't see a `techtonica` db, you can create one. From the terminal, navigate to the psql command line with `psql` and type `create database techtonica;` - don't forget the semicolon!! ⚠️
 
 ![You will something like this in your terminal](https://raw.githubusercontent.com/Yosolita1978/screenshoots/a4674c79f61b39547b068044c5e5f2bd8510a4b8/2023/H1/Screen%20Shot%202023-03-22%20at%2011.03.12%20PM.png)
 
@@ -47,7 +46,7 @@ For this template, the name of your db should be `techtonica`.
 
 ⚡ Note: Using Vite we can avoid all the package deprecation warnings ⚡
 
-9. If you want to run both servers using concurrently (which is already a npm dependency on the server) you can add the script `"dev": " concurrently 'npm start' 'cd .. && cd client && npm run dev' "` to your package.json in the server. This command will run both server with the instruction `npm run dev`
+9. If you want to run both servers using concurrently (which is already a npm dependency on the server) you can keep the script in the package.json in the server that reads `"dev": " concurrently 'npm start' 'cd .. && cd client && npm run dev' "`. If you run the command `npm run dev` from within your server, both the client and backend servers will start.
 
 10. Go to localhost:5173 and you should see something like this  💪
 
