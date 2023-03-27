@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: students; Type: TABLE; Schema: public; Owner: postgres
+-- Name: students; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.students (
@@ -32,10 +32,8 @@ CREATE TABLE public.students (
 );
 
 
-ALTER TABLE public.students OWNER TO postgres;
-
 --
--- Name: students_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: students_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.students_id_seq
@@ -47,45 +45,37 @@ CREATE SEQUENCE public.students_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.students_id_seq OWNER TO postgres;
-
 --
--- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
 
 
 --
--- Name: students id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: students id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
 
 
 --
--- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.students (id, firstname, lastname, is_current) FROM stdin;
-1	Jane	Doe	f
-2	Ammelie	France	t
-3	Zide	Grey	t
-12	Cristina	Gomez	f
-4	Lisa	Simpson	t
-15	Arepa	Rodriguez	\N
 \.
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.students_id_seq', 16, true);
+SELECT pg_catalog.setval('public.students_id_seq', 1, false);
 
 
 --
--- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.students
